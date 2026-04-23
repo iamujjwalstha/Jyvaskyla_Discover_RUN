@@ -198,23 +198,41 @@
     .process-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
     .process-card p { margin: 0; color: rgba(255,255,255,0.68); line-height: 1.7; font-size: 0.94rem; }
 
-    /* Interactive Carousel Integration */
+    /* -------------------------------------------------------------------
+       Interactive Route Carousel Styling (Finalized Smaller Scale)
+       ------------------------------------------------------------------- */
     .carousel-shell { position: relative; padding: 10px 0 34px; margin-top: 20px; }
     .carousel-viewport { overflow: hidden; cursor: none; }
     .track { display: flex; align-items: center; gap: 24px; transition: transform .65s cubic-bezier(.22,.61,.36,1); will-change: transform; padding: 8px 0; }
-    .slide { flex: 0 0 min(72vw, 900px); height: min(68vh, 620px); min-height: 420px; position: relative; overflow: hidden; border-radius: 28px; background: #111; border: 1px solid rgba(255,255,255,.08); transform: scale(.92); opacity: .45; transition: transform .55s ease, opacity .55s ease, filter .55s ease, box-shadow .55s ease; filter: saturate(.75); }
+    
+    .slide { 
+      flex: 0 0 min(60vw, 750px); 
+      height: min(55vh, 520px); 
+      min-height: 380px; 
+      position: relative; 
+      overflow: hidden; 
+      border-radius: 24px; 
+      background: #111; 
+      border: 1px solid rgba(255,255,255,.08); 
+      transform: scale(.92); 
+      opacity: .45; 
+      transition: transform .55s ease, opacity .55s ease, filter .55s ease, box-shadow .55s ease; 
+      filter: saturate(.75); 
+    }
+    
     .slide.active { transform: scale(1); opacity: 1; filter: saturate(1.1); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.15); z-index: 10; }
     .slide img { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(1.02); transition: transform .8s ease; pointer-events: none; }
     .slide.active:hover img { transform: scale(1.06); }
     
-    .slide-content { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 32px 28px; background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%); }
-    .tag { display: inline-block; padding: 8px 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.09); backdrop-filter: blur(8px); border-radius: 999px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 14px; color:#fff;}
-    .slide-content h3 { margin: 0 0 10px; font-size: clamp(28px, 3vw, 44px); line-height: .96; letter-spacing: -.04em; color:#fff; }
-    .slide-content p { margin: 0; max-width: 44ch; color: #d8deea; font-size: 16px; line-height: 1.55; }
+    .slide-content { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 28px; background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%); }
+    .tag { display: inline-block; padding: 6px 10px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.09); backdrop-filter: blur(8px); border-radius: 999px; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 12px; color:#fff;}
+    
+    .slide-content h3 { margin: 0 0 8px; font-size: clamp(22px, 2.8vw, 34px); line-height: 1.05; letter-spacing: -.03em; color:#fff; }
+    .slide-content p { margin: 0; max-width: 42ch; color: #d8deea; font-size: 14px; line-height: 1.6; }
 
     .carousel-nav { margin-top: 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .checkpoint-list { display: flex; gap: 10px; flex-wrap: wrap; }
-    .checkpoint-btn { border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 10px 14px; border-radius: 999px; font-size: 13px; cursor: pointer; transition: .25s ease; }
+    .checkpoint-list { display: flex; gap: 8px; flex-wrap: wrap; }
+    .checkpoint-btn { border: 1px solid var(--line); background: transparent; color: var(--muted); padding: 8px 12px; border-radius: 999px; font-size: 12px; cursor: pointer; transition: .25s ease; }
     .checkpoint-btn:hover, .checkpoint-btn.active { color: #0b0f16; background: #fff; border-color: #fff; }
     
     .arrows { display: flex; gap: 12px; }
@@ -296,7 +314,7 @@
     }
 
     @media (max-width: 900px) {
-      .slide { flex-basis: 86vw; height: 62vw; min-height: 360px; }
+      .slide { flex-basis: 80vw; height: 55vw; min-height: 320px; }
       .carousel-nav { align-items: flex-start; }
     }
 
@@ -321,10 +339,11 @@
       .story-block, .feature-block, .video-block, .photo-card, .cta-wrap { border-radius: 22px; }
       .sticky-cta { width: calc(100% - 20px); left: 10px; right: 10px; bottom: 12px; transform: translateY(140px); border-radius: 22px; flex-direction: column; align-items: stretch; gap: 10px; padding: 14px; }
       .sticky-cta.visible { transform: translateY(0); }
-      .slide { border-radius: 22px; height: 72vw; min-height: 300px; }
+      .slide { border-radius: 20px; height: 68vw; min-height: 280px; }
       .slide-content { padding: 20px; }
-      .slide-content h3 { font-size: 26px; }
-      .slide-content p { font-size: 14px; }
+      .slide-content h3 { font-size: 20px; }
+      .slide-content p { font-size: 13px; line-height: 1.5; }
+      .checkpoint-btn { font-size: 11px; padding: 6px 10px; }
       .cursor { display: none !important; }
       .carousel-viewport { cursor: auto; }
     }
@@ -904,7 +923,6 @@
     nextBtn.addEventListener('click', next);
 
     window.addEventListener('keydown', (e) => {
-      // Only trigger if they are somewhere near the carousel to avoid annoying users trying to read
       if(window.scrollY > document.getElementById('route').offsetTop - 600) {
         if (e.key === 'ArrowRight') next();
         if (e.key === 'ArrowLeft') prev();
